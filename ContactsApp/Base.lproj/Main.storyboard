@@ -1,24 +1,179 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DsO-aY-0ea">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Contact List View Controller-->
+        <scene sceneID="xqp-cW-Pm5">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tableViewController storyboardIdentifier="ContactListViewController" id="2Iq-0J-8mW" customClass="ContactListViewController" customModule="ContactsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="1" id="0mM-5m-8jt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="scrollIndicatorInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="xRT-kw-Lfq">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <connections>
+                            <outlet property="dataSource" destination="2Iq-0J-8mW" id="wsY-QJ-d5U"/>
+                            <outlet property="delegate" destination="2Iq-0J-8mW" id="13Z-do-Y5E"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="NaY-Ad-EBk">
+                        <barButtonItem key="leftBarButtonItem" title="Import" id="o4c-wO-y5O"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tC3-hb-vb4"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="emptyView" destination="3lU-fW-Qs7" id="juW-ZD-7ZT"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="piS-8x-8X8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="3lU-fW-Qs7">
+                    <rect key="frame" x="0.0" y="0.0" width="368" height="204"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No contacts available." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBa-oK-wZ5">
+                            <rect key="frame" x="100" y="91.5" width="168" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="GBa-oK-wZ5" firstAttribute="centerX" secondItem="3lU-fW-Qs7" secondAttribute="centerX" id="FnT-Ru-ulX"/>
+                        <constraint firstItem="GBa-oK-wZ5" firstAttribute="centerY" secondItem="3lU-fW-Qs7" secondAttribute="centerY" id="OIN-FT-8vj"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="3FC-2s-z2d"/>
+                </view>
             </objects>
+            <point key="canvasLocation" x="1388" y="122"/>
+        </scene>
+        <!--Contact Grid View Controller-->
+        <scene sceneID="GJo-nS-da5">
+            <objects>
+                <viewController storyboardIdentifier="ContactGridViewController" id="8LL-0i-uJh" customClass="ContactGridViewController" customModule="ContactsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9P3-c7-ewW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nWV-Xq-oBn">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9Tz-iW-bnC">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="8LL-0i-uJh" id="f0Y-YY-k2m"/>
+                                    <outlet property="delegate" destination="8LL-0i-uJh" id="NDh-KE-BTr"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jvt-Nh-fkJ" firstAttribute="bottom" secondItem="nWV-Xq-oBn" secondAttribute="bottom" id="7XB-PO-sTn"/>
+                            <constraint firstItem="nWV-Xq-oBn" firstAttribute="leading" secondItem="jvt-Nh-fkJ" secondAttribute="leading" id="MAO-xB-nzs"/>
+                            <constraint firstItem="nWV-Xq-oBn" firstAttribute="top" secondItem="jvt-Nh-fkJ" secondAttribute="top" id="YqK-DP-Khi"/>
+                            <constraint firstItem="jvt-Nh-fkJ" firstAttribute="trailing" secondItem="nWV-Xq-oBn" secondAttribute="trailing" id="Zxm-GB-Vkf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jvt-Nh-fkJ"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="nWV-Xq-oBn" id="TnD-1f-86F"/>
+                        <outlet property="emptyView" destination="lKA-W7-oGf" id="VSg-3N-aUS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f7K-Kx-8mF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="lKA-W7-oGf">
+                    <rect key="frame" x="0.0" y="0.0" width="377" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No contacts available." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1s-pt-Xi0">
+                            <rect key="frame" x="104.5" y="53.5" width="168" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="U1s-pt-Xi0" firstAttribute="centerY" secondItem="lKA-W7-oGf" secondAttribute="centerY" id="Viw-Oc-YRG"/>
+                        <constraint firstItem="U1s-pt-Xi0" firstAttribute="centerX" secondItem="lKA-W7-oGf" secondAttribute="centerX" id="m5r-D6-KYm"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="4wS-L7-scF"/>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="2042" y="122"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="BEe-Ub-SB2">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="fXE-gi-jjY" customClass="HomeViewController" customModule="ContactsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="349-po-jzI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="HeM-QL-hjR"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="iJ2-mK-E4h">
+                        <barButtonItem key="leftBarButtonItem" title="GridView" id="xgU-JX-3jA">
+                            <connections>
+                                <action selector="toggleContactViewStyle:" destination="fXE-gi-jjY" id="qZd-PZ-vTh"/>
+                            </connections>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="MHv-Mm-hXy">
+                                <connections>
+                                    <action selector="addNewContact:" destination="fXE-gi-jjY" id="A8E-fN-oo4"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Import" id="Pe4-Mx-TDP">
+                                <connections>
+                                    <action selector="importContact:" destination="fXE-gi-jjY" id="Q83-0d-qO5"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="toggleButton" destination="xgU-JX-3jA" id="boz-rZ-FaY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FkK-jt-Jg1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="665" y="122"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="d1z-Ua-uBy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DsO-aY-0ea" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Pbz-pS-n6Q">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fXE-gi-jjY" kind="relationship" relationship="rootViewController" id="B7U-7U-7YS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uR0-el-Ahd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-79.200000000000003" y="121.88905547226388"/>
         </scene>
     </scenes>
 </document>

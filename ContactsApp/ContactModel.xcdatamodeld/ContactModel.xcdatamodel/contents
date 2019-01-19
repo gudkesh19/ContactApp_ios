@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ContactData" representedClassName="ContactData" syncable="YES">
+        <attribute name="companyName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contactNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="contactNumber"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <elements>
+        <element name="ContactData" positionX="-63" positionY="-18" width="128" height="120"/>
+    </elements>
+</model>
